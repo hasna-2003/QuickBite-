@@ -1,4 +1,4 @@
-### QuickBite – Online Food Delivery Platform
+## QuickBite – Online Food Delivery Platform
 
 # 1. System Description
 
@@ -6,7 +6,7 @@ The system allows customers to browse restaurants, view menus, place food orders
 
 The backend will follow a Microservices Architecture where each business functionality runs as an independent service.
 
-## 2/ Project Scope
+# 2. Project Scope
 
 # In Scope
 
@@ -46,7 +46,7 @@ The backend will follow a Microservices Architecture where each business functio
 * Multi-country taxation
 * Advanced warehouse/inventory systems
 
-## 3. Functional Requirements
+# 3. Functional Requirements
 
 # A. User Management Service
 1. Users can register accounts
@@ -140,7 +140,7 @@ Email APIs
 Google Maps API
 Live location tracking
 
-## 5. Microservices Architecture
+# 5. Microservices Architecture
 
 You can divide the backend into these services:
 
@@ -156,7 +156,7 @@ Payment Service	Payments
 Notification Service	Emails/SMS
 Delivery Service	Delivery tracking
 
-## 6. Recommended Technology Stack
+# 6. Recommended Technology Stack
 
 # Frontend
 React.js	Frontend UI
@@ -181,7 +181,7 @@ Redis	Caching/cart
 Prometheus	Monitoring
 Grafana	Metrics dashboard
 
-## 7. Important Backend Concepts to Study
+# 7. Important Backend Concepts to Study
 
 Core Spring Boot
 REST APIs
@@ -249,7 +249,7 @@ order_id
 amount
 status
 
-## 9. Recommended Architecture Flow
+# 9. Recommended Architecture Flow
 Frontend (React)
        ↓
 API Gateway
@@ -265,7 +265,7 @@ Microservices
        ↓
 Databases
 
-## 10. Advanced Features for Final Year Level
+# 10. Advanced Features for Final Year Level
 
 Advanced Additions
 Real-time order tracking using WebSockets
@@ -314,7 +314,7 @@ Spring Cloud Documentation
 Docker Documentation
 Apache Kafka Documentation
 
-## 14. Best Architecture Recommendation
+# 14. Best Architecture Recommendation
 
 For an academic + industry-level project:
 
