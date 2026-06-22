@@ -20,27 +20,16 @@ const AddFood = () => {
     const onSubmitHandler = async(event) => {
         event.preventDefault();
         if (!image) {
-             alert("Please select an image");
+             toast.error("Please select an image");
              return;
         }
-
-        const formData = new FormData();  //create an object to form data to send to backend
-        formData.append('food',JSON.stringify(data));  //append the food data as a string
-        formData.append('image', image);  //append the image file
-
         try {
-           const response = await axios.post('http://localhost:8080/api/food', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-            if (response.status === 200) {
-                alert("Food added successfully!");
-                setData({name: '', description: '', category: 'Select a category', price: ''});
-                setImage(null);
-            }
+           await addFood(data, image);
+           toast.success('Food added successfully');
+           setData ({name: '', description: '', category: 'Select a category', price: ''});
+           setImage(null);
         } catch (error) {
-            console.error("Error uploading food data:", error);
+            toast.error('Failed to add food');
         }
     }
     
@@ -95,14 +84,17 @@ const AddFood = () => {
                             <div className="mb-3">
                                 <label htmlFor="category" className="form-label">Category</label>
                                 <select name="category" id="category" className="form-select" required onChange={onChangeHandler} value={data.category}> 
-                                    <option value="">Select a category</option>
-                                    <option value="Biriyani">Biriyani</option>
-                                    <option value="Pizza">Pizza</option>
-                                    <option value="Cake">Cake</option>
-                                    <option value="Burger">Burger</option>
-                                    <option value="Pasta">Pasta</option>
-                                    <option value="Rolls">Rolls</option>
-                                    <option value="IceCream">Ice Cream</option>
+                                   
+                                         <option value="">Select a category</option>
+                  <option value="Biriyani">Biriyani</option>
+                  <option value="Fries">Fries</option>
+                  <option value="Bread">Bread</option>
+                  <option value="Rice">Rice & Curry</option>
+                  <option value="Pasta">Pasta</option>
+                  <option value="Rolls">Rolls</option>
+                  <option value="IceCream">Ice Cream</option>
+                  <option value="Hoppers">String Hoppers</option>
+                  <option value="Sushi">Sushi</option>
                                 </select>
                             </div>
                               <div className="mb-3">
