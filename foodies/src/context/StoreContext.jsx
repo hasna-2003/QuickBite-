@@ -7,6 +7,22 @@ export const StoreContextProvider = (props) => {
 
     const [foodList, setFoodList] = useState([]);
 
+    const [quantities, setQuantities] = useState({});
+
+    const increaseQuantity = (foodid) => {
+        setQuantities(prev => ({
+            ...prev,
+            [foodid]: (prev[foodid] || 0) + 1    //incrementing the quantity
+        }));
+    }
+
+    const decreaseQuantity = (foodid) => {
+        setQuantities(prev => ({
+            ...prev,
+            [foodid]: Math.max(0, (prev[foodid] || 0) - 1)
+        }));
+    }
+
     const contextValue = {
         foodList
     };
