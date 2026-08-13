@@ -6,6 +6,7 @@ import AddFood from './pages/AddFood/AddFood';
 import ListFood from './pages/ListFood/ListFood';
 import Order from './pages/Order/Order';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const [sidebarVisible , setSidebarVisible] = useState(true);

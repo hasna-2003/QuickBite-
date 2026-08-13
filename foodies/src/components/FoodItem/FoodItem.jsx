@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { StoreContext } from '../../context/StoreContext';
 
 const FoodItem = ({name,description, id, imageUrl, price}) => {
+    const { quantities, increaseQuantity, decreaseQuantity } = useContext(StoreContext);
+
   return (
    <div 
          className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
@@ -31,7 +35,7 @@ const FoodItem = ({name,description, id, imageUrl, price}) => {
                 <button className="btn btn-success btn-sm" onClick={() => increaseQuantity(id)}><i className="bi bi-plus-circle"></i></button>
             </div>
         ) : (
-            <button className="btn btn-primary btn-sm" onClick={() => increaseQuantity}><i className="bi bi-plus-circle"></i> Add to Cart</button>
+            <button className="btn btn-primary btn-sm" onClick={() => increaseQuantity(id)}><i className="bi bi-plus-circle"></i> Add to Cart</button>
         )}
     </div>
      </div>

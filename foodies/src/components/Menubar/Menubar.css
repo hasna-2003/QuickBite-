@@ -1,11 +1,3 @@
-.logo{
-    margin-right: 25px;
+.active {
+    color: tomato !important;
 }
-
-.menubar-right{
-    display: flex;
-    align-items: center;
-    gap:20px;
- }
-
- 
